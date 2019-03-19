@@ -1,13 +1,15 @@
 from body_AB import *
 
-save_plots = True
+save_plots = False
 debug      = True
 n_epochs   = 5 + 1
 y_var      = 'lt' 
-EVALUATE   = False
+EVALUATE   = True
+
+torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
 #raw_data = pd.read_csv(os.path.join("data", "nasdaq100_padding.csv"), nrows=100 if debug else None)
-raw_data = pd.read_csv(os.path.join("data", "prova.csv.zip"), nrows=4000 if debug else None)
+raw_data = pd.read_csv(os.path.join("data", "prova.csv.zip"), nrows=100000 if debug else None)
 logger.info(f"Shape of data: {raw_data.shape}.\nMissing in data: {raw_data.isnull().sum().sum()}.")
 targ_cols  = (y_var,)
 data, scaler = preprocess_data(raw_data, targ_cols)
