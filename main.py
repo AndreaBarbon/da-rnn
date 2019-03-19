@@ -11,7 +11,7 @@ raw_data = pd.read_csv(os.path.join("data", "prova.csv.zip"), nrows=4000 if debu
 logger.info(f"Shape of data: {raw_data.shape}.\nMissing in data: {raw_data.isnull().sum().sum()}.")
 targ_cols  = (y_var,)
 data, scaler = preprocess_data(raw_data, targ_cols)
-da_rnn_kwargs = {"batch_size": 128, "T": 100}
+da_rnn_kwargs = {"batch_size": 128, "T": 10}
 config, model = da_rnn(data, n_targs=len(targ_cols), learning_rate=.001, **da_rnn_kwargs)
 iter_loss, epoch_loss = train(model, data, config, n_epochs=n_epochs, save_plots=save_plots)
 
