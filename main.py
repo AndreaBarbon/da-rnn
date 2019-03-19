@@ -3,8 +3,8 @@ from body_AB import *
 
 save_plots = False
 debug      = False
-n_epochs   = sys.argv[1] + 1
-time_steps = sys.argv[2]
+n_epochs   = int(sys.argv[1]) + 1
+time_steps = int(sys.argv[2])
 y_var      = 'lt' 
 EVALUATE   = True
 
