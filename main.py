@@ -2,7 +2,7 @@ from body_AB import *
 
 save_plots = False
 debug      = False
-n_epochs   = 15 + 1
+n_epochs   = 5 + 1
 y_var      = 'lt' 
 EVALUATE   = True
 
@@ -13,7 +13,7 @@ raw_data = pd.read_csv(os.path.join("data", "prova.csv.zip"), nrows=200000 if de
 logger.info(f"Shape of data: {raw_data.shape}.\nMissing in data: {raw_data.isnull().sum().sum()}.")
 targ_cols  = (y_var,)
 data, scaler = preprocess_data(raw_data, targ_cols)
-da_rnn_kwargs = {"batch_size": 128, "T": 20}
+da_rnn_kwargs = {"batch_size": 128, "T": 30}
 config, model = da_rnn(data, n_targs=len(targ_cols), learning_rate=.001, **da_rnn_kwargs)
 iter_loss, epoch_loss = train(model, data, config, n_epochs=n_epochs, save_plots=save_plots)
 
