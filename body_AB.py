@@ -25,9 +25,9 @@ logger = utils.setup_log()
 logger.info(f"Using computation device: {device}")
 
 PLOT = False
-TRAIN_SIZE = 5*10**3
-VALI_SIZE  = 5*10**3
-EP_LOG = 2
+TRAIN_SIZE = 10*10**3
+VALI_SIZE  = 10*10**3
+EP_LOG     = 5
 
 def preprocess_data(dat, col_names) -> Tuple[TrainData, StandardScaler]:
     scale = StandardScaler().fit(dat)
