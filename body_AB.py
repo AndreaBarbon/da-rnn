@@ -19,9 +19,6 @@ from custom_types import DaRnnNet, TrainData, TrainConfig
 from utils import numpy_to_tvar
 from constants import device
 
-
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
 logger = utils.setup_log()
 logger.info(f"Using computation device: {device}")
 
