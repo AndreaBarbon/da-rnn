@@ -1,7 +1,7 @@
 from body_AB import *
 
 save_plots = False
-debug      = True
+debug      = False
 n_epochs   = 15 + 1
 y_var      = 'lt' 
 EVALUATE   = True
